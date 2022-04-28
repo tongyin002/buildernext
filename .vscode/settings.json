@@ -21,4 +21,5 @@
         "**/*.code-search": true,
         ".gitignore": true,
     },
+    "typescript.tsdk": "node_modules/typescript/lib",
 }
