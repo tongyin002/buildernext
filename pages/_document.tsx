@@ -31,7 +31,7 @@ class MyDocument extends Document {
 
           <style>
             {`
-             a {
+              a {
                 font-weight: 400;
                 color: #58a6ff;
                 outline: none;
@@ -56,7 +56,7 @@ class MyDocument extends Document {
             `}
           </style>
         </Head>
-        <body>
+        <body className="bg-zinc-50 text-sm leading-6">
           <Main></Main>
           <NextScript></NextScript>
         </body>
