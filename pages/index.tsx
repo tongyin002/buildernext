@@ -1,7 +1,13 @@
 import Head from "next/head";
-import Header from "../components/Header";
-
-const Index = () => {
+import type { GetServerSidePropsContext } from "next";
+interface IndexProps {
+  user: {
+    displayName: string;
+    email: string;
+  };
+}
+const Index = ({ user }: IndexProps) => {
+  console.log("user", user.displayName);
   return (
     <div className="py-2.5 px-11">
       <Head>
@@ -12,11 +18,17 @@ const Index = () => {
         ></meta>
       </Head>
       <p className="my-2">Content on index page</p>
-      <button className="rounded shadow-md px-4 py-2 bg-zinc-100 min-w-64 transition-all hover:shadow-lg hover:bg-zinc-200">
-        MUI BUTTON
-      </button>
+      <p>
+        name: {user.displayName}, email: {user.email}
+      </p>
     </div>
   );
 };
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  return {
+    props: { user: ctx.query },
+  };
+}
 
 export default Index;

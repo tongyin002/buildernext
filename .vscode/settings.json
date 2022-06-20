@@ -28,4 +28,10 @@
     "editor.quickSuggestions": {
         "strings": true
     },
+    "tailwindCSS.files.exclude": [
+        "**/.git/**",
+        "**/node_modules/**",
+        "**/.hg/**",
+        "**/.json/**"
+    ],
 }
